@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CipherGuard — Password Analyzer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+  <div class="scanline"></div>
+
+  <div class="container">
+
+    <div class="header">
+
+      <div class="header-icon">
+        &#9650;
+      </div>
+
+      <h1>CipherGuard</h1>
+
+      <p>// password security analyzer</p>
+
+    </div>
+
+    <div class="card">
+
+      <div class="section-label">
+        input credentials
+      </div>
+
+      <div class="input-wrap">
+
+        <input
+          class="pwd-input"
+          type="password"
+          id="pwdInput"
+          placeholder="enter password to analyze..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+
+        <button
+          class="eye-toggle"
+          id="eyeBtn"
+          aria-label="Toggle password visibility"
+        >
+          👁
+        </button>
+
+      </div>
+
+      <div class="section-label">
+        threat level
+      </div>
+
+      <div class="meter-grid" id="meterSegs">
+
+        <div class="meter-seg"></div>
+        <div class="meter-seg"></div>
+        <div class="meter-seg"></div>
+        <div class="meter-seg"></div>
+        <div class="meter-seg"></div>
+
+      </div>
+
+      <div class="strength-row">
+
+        <span class="strength-label" id="strengthLabel">
+          STANDBY
+          <span class="cursor"></span>
+        </span>
+
+        <span class="strength-badge" id="strengthBadge">
+          --
+        </span>
+
+      </div>
+
+      <div class="section-label">
+        security checks
+      </div>
+
+      <div class="checks-grid">
+
+        <div class="check-item" id="c-len">
+          <span class="check-icon">&#9675;</span>
+          8+ characters
+        </div>
+
+        <div class="check-item" id="c-upper">
+          <span class="check-icon">&#9675;</span>
+          Uppercase A-Z
+        </div>
+
+        <div class="check-item" id="c-lower">
+          <span class="check-icon">&#9675;</span>
+          Lowercase a-z
+        </div>
+
+        <div class="check-item" id="c-num">
+          <span class="check-icon">&#9675;</span>
+          Number 0-9
+        </div>
+
+        <div class="check-item" id="c-sym">
+          <span class="check-icon">&#9675;</span>
+          Symbol !@#$
+        </div>
+
+        <div class="check-item" id="c-long">
+          <span class="check-icon">&#9675;</span>
+          12+ characters
+        </div>
+
+        <div class="check-item" id="c-nocommon">
+          <span class="check-icon">&#9675;</span>
+          Not blacklisted
+        </div>
+
+        <div class="check-item" id="c-norep">
+          <span class="check-icon">&#9675;</span>
+          No repetition
+        </div>
+
+      </div>
+
+      <div class="section-label">
+        analysis metrics
+      </div>
+
+      <div class="stats-row">
+
+        <div class="stat-box">
+
+          <div class="stat-label">
+            Entropy
+          </div>
+
+          <div class="stat-val" id="entropyVal">
+            -- bits
+          </div>
+
+        </div>
+
+        <div class="stat-box">
+
+          <div class="stat-label">
+            Crack time
+          </div>
+
+          <div class="stat-val" id="crackVal">
+            --
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="section-label">
+        recommendation
+      </div>
+
+      <div class="tip-box" id="tipBox">
+        // awaiting input — type a password above
+        <span class="cursor"></span>
+      </div>
+
+      <div class="section-label">
+        server analysis
+      </div>
+
+      <button class="analyze-btn" id="analyzeBtn">
+
+        <span id="btnText">
+          ▶ run server-side analysis
+        </span>
+
+      </button>
+
+      <div class="api-result" id="apiResult"></div>
+
+    </div>
+
+    <div class="footer">
+      [ CIPHERGUARD v2.4 ] — SECURE ANALYSIS ENGINE
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

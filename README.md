@@ -87,6 +87,8 @@ The backend exposes a single endpoint for analyzing passwords.
   "suggestion": "Excellent password."
 }
 ```
+![image alt](https://github.com/Abhinendra739/ciphergaurd/blob/main/Screenshot%202026-05-09%20121847.png?raw=true)
+
 
 
 
